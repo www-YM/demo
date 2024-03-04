@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* cause srcollTo not working */
+  /* height: 100%; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+}
+
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.align-center {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+/** 博客段落空行 https://github.com/margox/braft-editor/issues/373 **/
+.blog-content p:empty{
+  height: 1em;
+}
+
+.blog-content .media-wrap.image-wrap.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+#InkCustomizerInnerWrap button:focus {
+  outline: none;
+}
