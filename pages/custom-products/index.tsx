@@ -50,16 +50,16 @@ export async function getServerSideProps({req, query}) {
     ...query,
   });
 
-  // const protocol = req.headers.referer?.split('://')[0] || 'https';
-  // const url = `${protocol}://${req.headers.host}${req.url}`;
-  // const serverState = await getServerState(<CustomProductPage url={url} />, {
-  //   renderToString,
-  // });
+  const protocol = req.headers.referer?.split('://')[0] || 'https';
+  const url = `${protocol}://${req.headers.host}${req.url}`;
+  const serverState = await getServerState(<CustomProductPage url={url} />, {
+    renderToString,
+  });
 
   return {
     props: {
-      // serverState,
-      // url,
+      serverState,
+      url,
     },
   };
 }

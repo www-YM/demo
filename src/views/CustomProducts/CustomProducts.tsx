@@ -71,20 +71,20 @@ const CustomProducts = ({  serverState, url , intl }: Props): JSX.Element => {
           />
           <BaseNotification></BaseNotification>
 
-          {/* <InstantSearchSSRProvider {...serverState}> */}
+          <InstantSearchSSRProvider {...serverState}>
           <InstantSearch
             searchClient={searchClient}
             indexName="dev_inkpod-products-search"
             future={{ preserveSharedStateOnUnmount: true }}
-            // routing={{
-            //   router: createInstantSearchRouterNext({
-            //     serverUrl: url,
-            //     singletonRouter,
-            //     routerOptions: {
-            //       cleanUrlOnDispose: false,
-            //     },
-            //   }),
-            // }}
+            routing={{
+              router: createInstantSearchRouterNext({
+                serverUrl: url,
+                singletonRouter,
+                routerOptions: {
+                  cleanUrlOnDispose: false,
+                },
+              }),
+            }}
           >
             <Configure
               analytics={false}
@@ -100,7 +100,7 @@ const CustomProducts = ({  serverState, url , intl }: Props): JSX.Element => {
             ></HierarchicalMenu>
             <Hits hitComponent={HitComponent}></Hits>
           </InstantSearch>
-          {/* </InstantSearchSSRProvider> */}
+          </InstantSearchSSRProvider>
         </>
       </Section>
     </div>
